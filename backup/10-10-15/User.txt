@@ -1,0 +1,90 @@
+import java.util.*;
+class User
+{
+    //datamembers
+    static String user[]={"","","","","","","","","","","","","","","",""};
+    static String pass[]={"","","","","","","","","","","","","","","",""};
+    static String em[]={"","","","","","","","","","","","","","","",""};
+    static int ctr=0;
+    String username,password,email;
+    public void newUser()
+    {
+        Scanner ob=new Scanner(System.in);int a=1;String s;char c;int i;
+        do
+        {
+            if(a==0)
+            System.out.println("USERNAME TAKEN");
+            System.out.println("Enter Username");
+            username=ob.next();
+            a=newUseru(username);//checking if username is taken
+        }while(a==0);
+        a=1;
+        do
+        {
+            if(a==0)
+            System.out.println("EMAIL TAKEN");
+            System.out.println("Enter email");
+            email=ob.next();
+            for(i=0;i<email.length();i++)
+        {
+            c=s.charAt(i);
+            if(c=='@')//checking if @ is present
+            {
+                for(int j=i;j<s.length();j++)
+                {
+                   char c1=s.charAt(j);
+                    if(c1=='.')//checing if . is fresent after @
+                    {
+                    p=true;break;
+                }
+                }
+            }
+        }
+        if(p)//checking id valid email
+        System.out.println("Email id valid");//printing valid
+        else
+        System.out.println("Email id not valid");//printing invalid
+        a=newUsere(email);
+        }while(a==0);
+        System.out.println("Enter password");
+        password=ob.next();
+        newUserp(password);
+        }
+    public void showUser()
+    {
+        for(int i=0;i<100;i++)
+        System.out.println(user[i]);
+    }
+    
+    
+    
+    public int newUseru(String username)
+    {
+        for(int i=0;i<=ctr;i++)
+        {
+            if(username.equals(user[i]))//checking if username is taken
+            {
+            return 0;        
+        }
+        }
+        user[ctr]=username;//adding to array
+        return 1;
+    }
+    public int newUsere(String email)
+    {
+        for(int i=0;i<=ctr;i++)
+        {
+            if(em[i].equals(email))//checking if email is taken
+            {
+            return 0;
+        }
+        }
+        em[ctr]=email;//adding to array
+        return 1;
+    }
+    public void newUserp(String password)
+    {
+        pass[ctr]=password;//adding to array
+        ctr++;
+    }
+}

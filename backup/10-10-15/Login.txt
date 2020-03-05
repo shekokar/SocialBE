@@ -1,0 +1,27 @@
+import java.util.*;
+class Login
+{   
+    public static void login()
+    {
+        String username,password;
+        User a=new User();boolean p=true;
+        Scanner ob=new Scanner(System.in);
+        System.out.println("Enter username");
+        username=ob.next();
+        System.out.println("Enter password");
+        password=ob.next();
+        for(int i=0;i<=a.ctr;i++)
+        {
+        if(a.user[i].equals(username) && a.pass[i].equals(password))
+        {
+        System.out.println("Successful Login");p=false;break;
+        }
+        else if(a.user[i].equals(username) && a.pass[i].equals(password)==false)
+        {
+            System.out.println("Incorrect Password");p=false;break;
+        }
+        }
+        if(p)
+        System.out.println("Invalid User");
+    }
+}

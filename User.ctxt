@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ newUser()
+comment1.params=username
+comment1.target=int\ newUseru(java.lang.String)
+comment2.params=email
+comment2.target=int\ newUsere(java.lang.String)
+comment3.params=password
+comment3.target=void\ newUserp(java.lang.String)
+comment4.params=
+comment4.target=void\ showUser()
+comment5.params=
+comment5.target=void\ userDetails()
+comment6.params=
+comment6.target=void\ setUser()
+comment7.params=e
+comment7.target=void\ addEmail(Email)
+comment8.params=u
+comment8.target=void\ addFriend(User)
+comment9.params=username
+comment9.target=boolean\ isFriend(java.lang.String)
+numComments=10

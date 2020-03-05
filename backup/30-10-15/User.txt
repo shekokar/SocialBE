@@ -1,0 +1,118 @@
+import java.util.*;
+class User
+{
+    //datamembers
+    static String user[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    static String pass[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    static String eid[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    String mail[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    String mailer[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    String sub[]={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+    static int ctruser=0;
+    int ctrmail;
+    String username,password,email;
+    int n=0;
+    User()
+    {
+        ctrmail=0;
+    }
+    public void newUser()
+    {
+        Scanner ob=new Scanner(System.in);int a=1;String s;char c;int i;boolean p=true;
+        do
+        {
+            if(a==0)
+            System.out.println("USERNAME TAKEN");
+            System.out.println("Enter Username");
+            username=ob.next();
+            a=newUseru(username);//checking if username is taken
+        }while(a==0);
+        a=1;
+        do
+        {
+            if(a==0)
+            System.out.println("EMAIL TAKEN");
+            System.out.println("Enter email");
+            email=ob.next();
+                for(i=0;i<email.length();i++)
+                {
+                    c=email.charAt(i);
+                    if(c=='@')//checking if @ is present
+                    {
+                for(int j=i;j<email.length();j++)
+                {
+                   char c1=email.charAt(j);
+                    if(c1=='.')//checing if . is fresent after @
+                    {
+                    p=false;break;
+                }
+                }
+            }
+        }
+        if(p)//checking id valid email
+        {
+        System.out.println("Invalid email entered");//printing valid
+        a=2;continue;
+    }
+        a=newUsere(email);
+        }while(a==0 || a==2);
+        System.out.println("Enter password");
+        password=ob.next();
+        newUserp(password);
+        }
+    public void showUser()
+    {
+        for(int i=0;i<100;i++)
+        System.out.println(user[i]);
+    }
+    
+    
+    
+    public int newUseru(String username)
+    {
+        for(int i=0;i<=ctruser;i++)
+        {
+            if(username.equals(user[i]))//checking if username is taken
+            {
+            return 0;        
+        }
+        }
+        user[ctruser]=username;//adding to array
+        return 1;
+    }
+    public int newUsere(String email)
+    {
+        for(int i=0;i<=ctruser;i++)
+        {
+            if(eid[i].equals(email))//checking if email is taken
+            {
+            return 0;
+        }
+        }
+        eid[ctruser]=email;//adding to array
+
+        return 1;
+    }
+    public void newUserp(String password)
+    {
+        pass[ctruser]=password;//adding to array
+        n=ctruser;
+        ctruser++;
+    }
+    
+       
+    public void Email()
+    {
+        Scanner ob=new Scanner(System.in);
+        int i,ch;
+        for(i=0;i<=ctrmail;i++)
+        {
+            System.out.println((i+1)+"\t"+mailer[i]+"\t"+sub[i]);
+        }
+        ch=ob.nextInt();
+        if(ch<=ctrmail+1)
+        System.out.print("\f");
+        System.out.println(mail[ch-1]);
+ 
+}
+}

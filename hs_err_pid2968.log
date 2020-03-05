@@ -1,0 +1,263 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x5f559910, pid=2968, tid=6892
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_60-b27) (build 1.8.0_60-b27)
+# Java VM: Java HotSpot(TM) Client VM (25.60-b23 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x249910]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0598f800):  JavaThread "BlueJ worker thread" [_thread_in_vm, id=6892, stack(0x05350000,0x053a0000)]
+
+siginfo: ExceptionCode=0xc0000006, ExceptionInformation=0x00000008 0x5f559910 0xc000026e 
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x01d9d9b0, EDX=0x0598f800
+ESP=0x0539f534, EBP=0x0539f570, ESI=0x0598f800, EDI=0x0598f800
+EIP=0x5f559910, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0539f534)
+0x0539f534:   5f46fb6e 5f467fe5 0598f800 04baac68
+0x0539f544:   04baac68 04baac00 0539f53c 00000000
+0x0539f554:   00000000 00000000 00000000 fffffffe
+0x0539f564:   0539f574 5f316ea4 0598f800 0539f590
+0x0539f574:   5f40fdb2 0598f800 0598f800 00000006
+0x0539f584:   0598f800 04baac68 04baac68 0539f5d0
+0x0539f594:   74a54feb 00000000 02871be1 0598f940
+0x0539f5a4:   0539f5d8 00000000 02871796 0539f5b0 
+
+Instructions: (pc=0x5f559910)
+0x5f5598f0:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000006]
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x01d9d9b0 is an unknown value
+EDX=0x0598f800 is a thread
+ESP=0x0539f534 is pointing into the stack for thread: 0x0598f800
+EBP=0x0539f570 is pointing into the stack for thread: 0x0598f800
+ESI=0x0598f800 is a thread
+EDI=0x0598f800 is a thread
+
+
+Stack: [0x05350000,0x053a0000],  sp=0x0539f534,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x249910]
+V  [jvm.dll+0xffdb2]
+C  [java.dll+0x4feb]
+j  java.lang.Shutdown.halt(I)V+7
+j  java.lang.Shutdown.exit(I)V+99
+j  java.lang.Runtime.exit(I)V+14
+j  java.lang.System.exit(I)V+4
+j  bluej.runtime.ExecServer$1.run()V+138
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158985]
+V  [jvm.dll+0x21df3e]
+V  [jvm.dll+0x158a1e]
+V  [jvm.dll+0x158ba6]
+V  [jvm.dll+0x158c17]
+V  [jvm.dll+0xfd45f]
+V  [jvm.dll+0x17bddc]
+V  [jvm.dll+0x17beca]
+V  [jvm.dll+0x1c0466]
+C  [msvcr100.dll+0x5c556]
+C  [msvcr100.dll+0x5c600]
+C  [kernel32.dll+0x1338a]
+C  [ntdll.dll+0x397f2]
+C  [ntdll.dll+0x397c5]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Shutdown.halt0(I)V+0
+j  java.lang.Shutdown.halt(I)V+7
+j  java.lang.Shutdown.exit(I)V+99
+j  java.lang.Runtime.exit(I)V+14
+j  java.lang.System.exit(I)V+4
+j  bluej.runtime.ExecServer$1.run()V+138
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x059fe800 JavaThread "main" [_thread_blocked, id=8164, stack(0x06460000,0x064b0000)]
+  0x023fd000 JavaThread "DestroyJavaVM" [_thread_blocked, id=6236, stack(0x02540000,0x02590000)]
+=>0x0598f800 JavaThread "BlueJ worker thread" [_thread_in_vm, id=6892, stack(0x05350000,0x053a0000)]
+  0x05977800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2520, stack(0x05ed0000,0x05f20000)]
+  0x05975400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=7720, stack(0x05f30000,0x05f80000)]
+  0x04d4e800 JavaThread "Service Thread" daemon [_thread_blocked, id=5844, stack(0x05080000,0x050d0000)]
+  0x04d38000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=6992, stack(0x05770000,0x057c0000)]
+  0x04d2d000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=4688, stack(0x055c0000,0x05610000)]
+  0x04d2a000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2228, stack(0x05230000,0x05280000)]
+  0x04d27000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7808, stack(0x053b0000,0x05400000)]
+  0x04ce5c00 JavaThread "Finalizer" daemon [_thread_blocked, id=7396, stack(0x05180000,0x051d0000)]
+  0x04cdfc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=6232, stack(0x050d0000,0x05120000)]
+
+Other Threads:
+  0x04cda800 VMThread [stack: 0x04f60000,0x04fb0000] [id=6576]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1160K [0x10200000, 0x10750000, 0x15750000)
+  eden space 4416K,  14% used [0x10200000, 0x102a2188, 0x10650000)
+  from space 512K, 100% used [0x106d0000, 0x10750000, 0x10750000)
+  to   space 512K,   0% used [0x10650000, 0x10650000, 0x106d0000)
+ tenured generation   total 10944K, used 286K [0x15750000, 0x16200000, 0x20200000)
+   the space 10944K,   2% used [0x15750000, 0x15797b38, 0x15797c00, 0x16200000)
+ Metaspace       used 3911K, capacity 4087K, committed 4160K, reserved 4480K
+
+Card table byte_map: [0x02330000,0x023c0000] byte_map_base: 0x022af000
+
+Polling page: 0x002d0000
+
+CodeCache: size=32768Kb used=816Kb max_used=816Kb free=31951Kb
+ bounds [0x02860000, 0x02930000, 0x04860000]
+ total_blobs=283 nmethods=121 adapters=101
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 132.299 Thread 0x04d38000  117             java.util.regex.Pattern::RemoveQEQuoting (346 bytes)
+Event: 132.301 Thread 0x04d38000 nmethod 117 0x0292a048 code [0x0292a1a0, 0x0292a808]
+Event: 132.301 Thread 0x04d38000  118             java.util.regex.ASCII::isAscii (13 bytes)
+Event: 132.302 Thread 0x04d38000 nmethod 118 0x0292ae88 code [0x0292af80, 0x0292b000]
+Event: 132.302 Thread 0x04d38000  119             java.lang.String::<init> (209 bytes)
+Event: 132.303 Thread 0x04d38000 nmethod 119 0x0292b048 code [0x0292b1d0, 0x0292b60c]
+Event: 132.303 Thread 0x04d38000  120             java.lang.String::startsWith (7 bytes)
+Event: 132.304 Thread 0x04d38000 nmethod 120 0x0292bc08 code [0x0292bd00, 0x0292bdac]
+Event: 132.304 Thread 0x04d38000  121             java.util.regex.Pattern::next (33 bytes)
+Event: 132.304 Thread 0x04d38000 nmethod 121 0x0292be08 code [0x0292bf10, 0x0292bfec]
+
+GC Heap History (2 events):
+Event: 470.381 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x10200000, 0x10750000, 0x15750000)
+  eden space 4416K, 100% used [0x10200000, 0x10650000, 0x10650000)
+  from space 512K,   0% used [0x10650000, 0x10650000, 0x106d0000)
+  to   space 512K,   0% used [0x106d0000, 0x106d0000, 0x10750000)
+ tenured generation   total 10944K, used 0K [0x15750000, 0x16200000, 0x20200000)
+   the space 10944K,   0% used [0x15750000, 0x15750000, 0x15750200, 0x16200000)
+ Metaspace       used 3911K, capacity 4087K, committed 4160K, reserved 4480K
+Event: 470.387 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 512K [0x10200000, 0x10750000, 0x15750000)
+  eden space 4416K,   0% used [0x10200000, 0x10200000, 0x10650000)
+  from space 512K, 100% used [0x106d0000, 0x10750000, 0x10750000)
+  to   space 512K,   0% used [0x10650000, 0x10650000, 0x106d0000)
+ tenured generation   total 10944K, used 286K [0x15750000, 0x16200000, 0x20200000)
+   the space 10944K,   2% used [0x15750000, 0x15797b38, 0x15797c00, 0x16200000)
+ Metaspace       used 3911K, capacity 4087K, committed 4160K, reserved 4480K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.139 Thread 0x023fd000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x1020bc78) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jni0õØ^šà?
+Event: 0.519 Thread 0x023fd000 Exception <a 'java/security/PrivilegedActionException'> (0x102cff90) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.519 Thread 0x023fd000 Exception <a 'java/security/PrivilegedActionException'> (0x102d0190) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.520 Thread 0x023fd000 Exception <a 'java/security/PrivilegedActionException'> (0x102d2bf0) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.520 Thread 0x023fd000 Exception <a 'java/security/PrivilegedActionException'> (0x102d2df0) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.537 Thread 0x023fd000 Exception <a 'java/io/FileNotFoundException'> (0x102f4d90) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 0.572 Thread 0x023fd000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x103afe10) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+Event: 0.573 Thread 0x023fd000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x103bbfc8) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+Event: 38.355 Thread 0x04d65c00 Exception <a 'java/io/FileNotFoundException'> (0x104a80f0) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1045.761 Thread 0x0598f800 Exception <a 'java/lang/NoClassDefFoundError': java/util/IdentityHashMap$KeySet> (0x1027f140) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 208]
+
+Events (10 events):
+Event: 1045.761 Executing VM operation: ChangeBreakpoints
+Event: 1045.761 Executing VM operation: ChangeBreakpoints done
+Event: 1045.761 Thread 0x04d31800 Thread exited: 0x04d31800
+Event: 1045.761 Executing VM operation: ChangeBreakpoints
+Event: 1045.761 Executing VM operation: ChangeBreakpoints done
+Event: 1045.761 Executing VM operation: ChangeBreakpoints
+Event: 1045.761 Executing VM operation: ChangeBreakpoints done
+Event: 1045.761 loading class java/util/IdentityHashMap$KeySet
+Event: 1045.761 loading class java/util/IdentityHashMap$KeySet done
+Event: 1045.761 Thread 0x04d2b000 Thread exited: 0x04d2b000
+
+
+Dynamic libraries:
+0x00090000 - 0x000c3000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\java.exe
+0x776e0000 - 0x77860000 	C:\Windows\SysWOW64\ntdll.dll
+0x76a50000 - 0x76b60000 	C:\Windows\syswow64\kernel32.dll
+0x75490000 - 0x754d7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76d80000 - 0x76e20000 	C:\Windows\syswow64\ADVAPI32.dll
+0x756a0000 - 0x7574c000 	C:\Windows\syswow64\msvcrt.dll
+0x769c0000 - 0x769d9000 	C:\Windows\SysWOW64\sechost.dll
+0x771f0000 - 0x772e0000 	C:\Windows\syswow64\RPCRT4.dll
+0x751f0000 - 0x75250000 	C:\Windows\syswow64\SspiCli.dll
+0x751e0000 - 0x751ec000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x75b70000 - 0x75c70000 	C:\Windows\syswow64\USER32.dll
+0x75c70000 - 0x75d00000 	C:\Windows\syswow64\GDI32.dll
+0x769b0000 - 0x769ba000 	C:\Windows\syswow64\LPK.dll
+0x77030000 - 0x770cd000 	C:\Windows\syswow64\USP10.dll
+0x74190000 - 0x7432e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x76c00000 - 0x76c57000 	C:\Windows\syswow64\SHLWAPI.dll
+0x76950000 - 0x769b0000 	C:\Windows\system32\IMM32.DLL
+0x76f60000 - 0x7702c000 	C:\Windows\syswow64\MSCTF.dll
+0x10000000 - 0x10064000 	C:\Program Files (x86)\McAfee\Host Intrusion Prevention\HcApi.dll
+0x61d70000 - 0x61d79000 	C:\Program Files (x86)\McAfee\Host Intrusion Prevention\HcThe.dll
+0x652a0000 - 0x652c7000 	C:\Program Files (x86)\McAfee\Host Intrusion Prevention\HIPHandlers.dll
+0x75b60000 - 0x75b65000 	C:\Windows\syswow64\PSAPI.DLL
+0x74ab0000 - 0x74b6f000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\msvcr100.dll
+0x5f310000 - 0x5f6d5000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\client\jvm.dll
+0x74170000 - 0x74177000 	C:\Windows\system32\WSOCK32.dll
+0x770d0000 - 0x77105000 	C:\Windows\syswow64\WS2_32.dll
+0x75250000 - 0x75256000 	C:\Windows\syswow64\NSI.dll
+0x744a0000 - 0x744d2000 	C:\Windows\system32\WINMM.dll
+0x744e0000 - 0x744e9000 	C:\Windows\system32\VERSION.dll
+0x74aa0000 - 0x74aac000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\verify.dll
+0x74a50000 - 0x74a71000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\java.dll
+0x65220000 - 0x65249000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\jdwp.dll
+0x74940000 - 0x74947000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\npt.dll
+0x74a30000 - 0x74a43000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\zip.dll
+0x75d00000 - 0x7694b000 	C:\Windows\syswow64\SHELL32.dll
+0x75540000 - 0x7569c000 	C:\Windows\syswow64\ole32.dll
+0x74390000 - 0x7439b000 	C:\Windows\system32\profapi.dll
+0x74980000 - 0x74989000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\dt_shmem.dll
+0x5ef30000 - 0x5f075000 	D:\bluej316-standalone\BlueJ\jdk\jre\bin\awt.dll
+0x77110000 - 0x7719f000 	C:\Windows\syswow64\OLEAUT32.dll
+0x743d0000 - 0x74450000 	C:\Windows\system32\uxtheme.dll
+0x70ab0000 - 0x70ac3000 	C:\Windows\system32\dwmapi.dll
+0x72420000 - 0x7250b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -ea -Djavafx.macosx.embedded=true -agentlib:jdwp=transport=dt_shmem,address=javadebug -Dfile.encoding=UTF-8 
+java_command: bluej.runtime.ExecServer UTF-8
+java_class_path (initial): D:\bluej316-standalone\BlueJ\lib\bluejcore.jar;D:\bluej316-standalone\BlueJ\lib\junit-4.8.2.jar;D:\bluej316-standalone\BlueJ\lib\userlib\pi4j-core.jar;D:\bluej316-standalone\BlueJ\lib\userlib\pi4j-device.jar;D:\bluej316-standalone\BlueJ\lib\userlib\pi4j-gpio-extension.jar;D:\bluej316-standalone\BlueJ\lib\userlib\pi4j-service.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft Application Virtualization Client;C:\Program Files (x86)\Enterprise Vault\EVClient\
+USERNAME=vijayanr
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23136)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 3883136k(2062496k free), swap 7764416k(5805268k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.60-b23) for windows-x86 JRE (1.8.0_60-b27), built on Aug  4 2015 10:57:40 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Nov 11 19:57:33 2015
+elapsed time: 1045 seconds (0d 0h 17m 25s)
+

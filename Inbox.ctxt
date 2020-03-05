@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Inbox
+comment1.params=u\ userno
+comment1.target=void\ inbox(User[],\ int)
+numComments=2

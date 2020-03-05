@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=friend
+comment1.params=u\ userno
+comment1.target=void\ newFriend(User[],\ int)
+comment2.params=u\ userno
+comment2.target=void\ viewFriend(User[],\ int)
+numComments=3

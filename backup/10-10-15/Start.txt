@@ -1,0 +1,25 @@
+import java.util.*;
+class Start
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("1.New User");
+        System.out.println("2.Login");
+        int a=ob.nextInt();
+        switch(a)
+        {
+            case 1:
+            User u=new User();
+            u.newUser();
+            System.out.println("NEW USER CREATED\nINITIATING LOGIN");
+            Login.login();
+            break;
+            
+            case 2:
+            Login.login();
+            break;
+            
+        }
+    }
+}

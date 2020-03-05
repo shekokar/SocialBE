@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=friend_menu
+comment1.params=u\ userno
+comment1.target=void\ menu(User[],\ int)
+numComments=2
