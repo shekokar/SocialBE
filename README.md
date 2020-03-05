@@ -1,0 +1,1 @@
+This is a basic Java Project in which email and Twitter like micro-blogging platform has been created.
